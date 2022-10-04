@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>sergey hudyakow</title>
+        <link href = "style.css" rel = "stylesheet">
+		<script src="https://kit.fontawesome.com/3219cc2f1b.js" crossorigin="anonymous"></script>
+		<script src = "script.js"></script>
+        <script type="text/javascript" src="https://res.cloudinary.com/veseylab/raw/upload/v1636192990/magicmouse/magic_mouse-1.2.1.cdn.min.js"></script>
+        <script
+           src="https://code.jquery.com/jquery-3.6.0.js"
+           integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+            crossorigin="anonymous">
+		</script>
+        <script>
+            $(document).ready(function() {
+    var delay = false;
+    var currentPage = 1;
+    var pageCount = $(".section, .section1").length;
+    var swipe = document.getElementsByTagName('.section, .section1');
+  
+    $(document).on('mousewheel DOMMouseScroll', function(event) {
+          event.preventDefault();
+          if (delay) return;
+          delay = true;
+          setTimeout(function() { delay = false }, 100)
+  
+          var wd = event.originalEvent.wheelDelta || -event.originalEvent.detail;
+          console.log(wd);
+  
+          if (wd < 0) {
+              if (currentPage < pageCount) {
+                  currentPage++;
+              }
+          } else {
+              if (1 < currentPage) {
+                  currentPage--;
+              }
+          }
+      
+          $('html,body').animate({
+              scrollTop: $('#sec' + currentPage).offset().top
+          }, 700);
+  
+          $('#tag' + currentPage).addClass('active');
+          for (var i = 1; i <= pageCount; i++) {
+              if (i != currentPage) {
+                  $('#tag' + i).removeClass('active');
+              }
+          }
+      });
+  });  
+
+  
+        </script>
+    </head>
+<body>
+    <script type="text/javascript"> 
+        options = {
+        "cursorOuter": "circle-basic",
+        "hoverEffect": "circle-move",
+        "hoverItemMove": false,
+        "defaultCursor": false,
+        "outerWidth": 30,
+        "outerHeight": 30
+        };
+        magicMouse(options);
+    </script>
+        <ul>
+            <li id="tag1" class="active"></li>
+            <li id="tag2"></li>
+            <li id="tag3"></li>
+            <li id="tag4"></li>
+            <li id="tag5"></li>
+        </ul>
+      <div class="section" id="sec1">
+        <div class = "logo">ЛОГО</div>
+        <div class = "text">
+            Я ббг рбпбсбна рбпбчибы
+        </div>
+        <a href = "#" class = "button">
+            Написать<i class="fa-solid fa-arrow-right" style = "margin-left: 5px;"></i>
+        </a>
+        <div class = "block">
+            <div class = "block-text1">
+                <h1>Цифры1</h1>
+                <h2>Один два три<br> четыре пять шесть семь<br> восемь девять десять</h2>
+            </div>
+            <div class = "block-text2">
+                <h1>Цифры2</h1>
+                <h2>Один два три<br> четыре пять шесть семь<br> восемь девять десять</h2>
+            </div>
+            <div class = "block-text3">
+                <h1>Цифры3</h1>
+                <h2>Один два три<br> четыре пять шесть семь<br> восемь девять десять</h2>
+            </div>
+        </div>
+        <div class = "photo"></div>
+    </div>
+      <div class="section1" id="sec2">
+        <div class = "logo1">ЛОГО</div>
+        <div class = "btn">
+            <a class = "hire-us" href = "#">Написать</a>
+        </div>
+        <div class = "work">Выберите задачу</div>
+        <div class = "circle">
+            <div class = "circle-work2">
+                <h3>ПОБЕДА</h3>
+            </div>
+            <div class = "circle-work">
+                <h1>МЭТЬЮ & СМИТ</h1>
+                <h2>Мы рассказываем вам вам<br>вам про интересную вам вам </h2>
+            </div>
+            <div class = "circle-work1">
+                <h3>АЛЕКС</h3>
+            </div>
+        </div>
+      </div>
+    
+      <div class="section2" id="sec3">
+        <div class = "logo1">ЛОГО</div>
+        <div class = "btn">
+            <a class = "hire-us" href = "#">Написать</a>
+        </div>>
+        <div class = "text2">
+            Я<br>Верю в<br>Увлеченных<br>Людей<span></span>
+        </div>
+        <a href = "#" class = "cv">РЕЗЮМЕ<i class="fa-solid fa-arrow-right" style = "margin-left: 15px; font-size: 20px"></i></a>
+        <div class = "cv-image"></div>
+        <div class = "block-cv">
+            <div class = "part1">
+                <h3>победители</h3>
+            </div>
+            <div class = "part2">
+                <h3>программирование</h3>
+            </div>
+            <div class = "part3">
+                <h3>математика</h3>
+            </div>
+        </div>
+      </div>
+      <div class="section" id="sec4"><p>section 4</p></div>
+      <div class="section" id="sec5"><p>section 5</p></div>
+</body>
+</html>
