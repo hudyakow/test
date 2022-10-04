@@ -295,6 +295,9 @@ h2 {
     ul {
         left: -20px;
     }
+    .cv-image {
+        visibility: hidden;
+    }
 }
 
 
